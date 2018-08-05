@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Лисов Павел</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Draw bezier</h1>
+	<hr>
+	
+	<div class="svgContainer"></div>
+	<button class="btn" id="save-line">Сохранить линию</button>
+	<button class="btn" id="clear">Отчистить</button>
+	
+	<script src='bezier.js'></script>
+	<script>
+		let myBezier = new Bezier({selector: '.svgContainer'});
+		myBezier.render();
+		let clear = document.getElementById('clear'),
+			saveLine = document.getElementById('save-line');
+			clear.addEventListener('click', () => myBezier.clear());
+			saveLine.addEventListener('click', () => myBezier.saveLine());
+	</script>
+</body>
+</html>
